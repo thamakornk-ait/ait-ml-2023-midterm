@@ -1,0 +1,17 @@
+version: '3'
+services:
+  dev:   
+    image: thamakorn/ait-ml-2023-midterm:lastest
+    platform: linux/x86_64
+    build: 
+      context: .
+      dockerfile: .Dockerfile
+    ports:
+      - 9001:80
+    volumes:
+    
+      - ./code:/root/code 
+      - ./.vscode-server:/root/.vscode-server
+    environment:
+      - HOST=0.0.0.0
+      - PORT=80
